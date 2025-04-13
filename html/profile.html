@@ -184,11 +184,84 @@
     <!-- Signup form will be dynamically added here -->
   </div>
 
-  <Script src="./src/profile-fix.js"></Script>
+  <script>
+    // Immediate fix for profile page
+    (function() {
+      console.log('Inline profile fix running');
+      
+      // Get profile container
+      const profileContainer = document.querySelector('.profile-container');
+      if (!profileContainer) return;
+      
+      // Remove loading spinner
+      const loadingSpinner = profileContainer.querySelector('.loading-spinner');
+      if (loadingSpinner) {
+        loadingSpinner.remove();
+      }
+      
+      // Display  profile
+      profileContainer.innerHTML = `
+        <img src="https://i.pravatar.cc/150?img=3" alt="Demo User" class="profile-avatar">
+        <div class="profile-info">
+          <h1>kigundu</h1>
+          <p class="profile-role">Creator (Visual Art, Design)</p>
+          <p class="profile-bio">This is a sample profile for demonstration purposes.</p>
+          <div class="profile-stats">
+            <div class="stat-item">
+              <div class="stat-value">3</div>
+              <div class="stat-label">Works</div>
+            </div>
+            <div class="stat-item">
+              <div class="stat-value">45</div>
+              <div class="stat-label">Likes</div>
+            </div>
+            <div class="stat-item">
+              <div class="stat-value">12</div>
+              <div class="stat-label">Comments</div>
+            </div>
+          </div>
+        </div>
+      `;
+      
+      // Fix portfolio tab
+      const portfolioTab = document.getElementById('portfolioTab');
+      if (portfolioTab) {
+        const tabLoadingSpinner = portfolioTab.querySelector('.loading-spinner');
+        if (tabLoadingSpinner) {
+          tabLoadingSpinner.remove();
+        }
+        
+        portfolioTab.innerHTML = `
+          <div class="portfolio-grid">
+            <div class="portfolio-item">
+              <div class="portfolio-content">
+                <img src="https://picsum.photos/600/400?random=1" alt="Demo Artwork" class="portfolio-image">
+                <div class="portfolio-info">
+                  <h3 class="portfolio-title">Demo Artwork</h3>
+                  <p class="portfolio-category">Visual Art</p>
+                  <div class="portfolio-tags">
+                    <span class="tag">Digital</span>
+                    <span class="tag">Illustration</span>
+                  </div>
+                  <p class="portfolio-date">Posted on Mar 5, 2023</p>
+                  <div class="portfolio-stats">
+                    <span class="likes-count">26 likes</span>
+                    <span class="comments-count">4 comments</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        `;
+      }
+    })();
+  </script>
+
+  <Script src="/src/profile-fix.js"></Script>
   <script src="/src/button-fix.js"></script>
 <script src="/src/json-fix.js"></script>
   <script src="/src/data-fix.js"></script>
   <script src="/src/auth-storage-fix.js"></script>
-  <script type="module" src="/src/main.js"></script>
+  <script type="module" src="./src/main.js"></script>
 </body>
 </html>

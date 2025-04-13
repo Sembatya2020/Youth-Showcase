@@ -1,223 +1,154 @@
-// Add these functions to your existing profile-fix.js file
+// Add this at the top of your profile-fix.js file to ensure it runs immediately
 
-// Fix for home page buttons
-function fixHomePageButtons() {
-    console.log('Fixing home page buttons');
+console.log('Profile fix script loading...');
+
+// Check if we're on the profile page and fix it immediately
+if (window.location.pathname.includes('profile.html')) {
+  // Run this code immediately without waiting for DOMContentLoaded
+  const profileFix = function() {
+    console.log('Emergency profile page fix running');
     
-    // Only run on home page
-    if (window.location.pathname === '/' || window.location.pathname === '/index.html') {
-      const getStartedBtn = document.querySelector('.hero-buttons .primary-btn');
-      const learnMoreBtn = document.querySelector('.hero-buttons .secondary-btn');
-      
-      if (getStartedBtn) {
-        getStartedBtn.addEventListener('click', () => {
-          // Check if user is logged in
-          const user = localStorage.getItem('cys_user');
-          if (user) {
-            // If logged in, go to upload page
-            window.location.href = '/html/upload.html';
-          } else {
-            // If not logged in, open signup modal
-            const signupModal = document.getElementById('signupModal');
-            if (signupModal) signupModal.classList.add('active');
-          }
-        });
-      }
-      
-      if (learnMoreBtn) {
-        learnMoreBtn.addEventListener('click', () => {
-          // Scroll to "How It Works" section
-          const howItWorksSection = document.querySelector('.how-it-works');
-          if (howItWorksSection) {
-            howItWorksSection.scrollIntoView({ behavior: 'smooth' });
-          }
-        });
-      }
+    // Get profile container
+    const profileContainer = document.querySelector('.profile-container');
+    if (!profileContainer) {
+      console.error('Profile container not found');
+      return;
     }
-  }
-  
-  // Fix for explore page
-  function fixExplorePage() {
-    console.log('Fixing explore page');
     
-    // Only run on explore page
-    if (window.location.pathname.includes('explore.html')) {
-      const portfolioGrid = document.querySelector('.portfolio-grid');
-      const loadingSpinner = document.querySelector('.loading-spinner');
-      
-      if (!portfolioGrid) return;
-      
-      // Get portfolios from localStorage
-      let portfolios = [];
-      const portfoliosJson = localStorage.getItem('cys_portfolios');
-      
-      if (portfoliosJson) {
-        try {
-          portfolios = JSON.parse(portfoliosJson);
-        } catch (error) {
-          console.error('Error parsing portfolios data:', error);
-        }
-      }
-      
-      // If no portfolios found, create sample data
-      if (!portfolios || portfolios.length === 0) {
-        createSampleData();
-        const newPortfoliosJson = localStorage.getItem('cys_portfolios');
-        if (newPortfoliosJson) {
-          portfolios = JSON.parse(newPortfoliosJson);
-        }
-      }
-      
-      // Remove loading spinner
-      if (loadingSpinner) {
-        loadingSpinner.remove();
-      }
-      
-      // Display portfolios
-      portfolios.forEach(portfolio => {
-        const portfolioItem = createPortfolioItem(portfolio);
-        portfolioGrid.appendChild(portfolioItem);
-      });
+    // Remove loading spinner
+    const loadingSpinner = profileContainer.querySelector('.loading-spinner');
+    if (loadingSpinner) {
+      loadingSpinner.remove();
     }
-  }
-  
-  // Fix for events page
-  function fixEventsPage() {
-    console.log('Fixing events page');
     
-    // Only run on events page
-    if (window.location.pathname.includes('events.html')) {
-      const eventsGrid = document.querySelector('.events-grid');
-      const loadingSpinner = document.querySelector('.loading-spinner');
-      
-      if (!eventsGrid) return;
-      
-      // Get events from localStorage
-      let events = [];
-      const eventsJson = localStorage.getItem('cys_events');
-      
-      if (eventsJson) {
-        try {
-          events = JSON.parse(eventsJson);
-        } catch (error) {
-          console.error('Error parsing events data:', error);
-        }
+    // Check if user is logged in
+    let currentUser = null;
+    try {
+      const userJson = localStorage.getItem('cys_user');
+      if (userJson) {
+        currentUser = JSON.parse(userJson);
       }
-      
-      // If no events found, create sample data
-      if (!events || events.length === 0) {
-        createSampleEvents();
-        const newEventsJson = localStorage.getItem('cys_events');
-        if (newEventsJson) {
-          events = JSON.parse(newEventsJson);
-        }
-      }
-      
-      // Remove loading spinner
-      if (loadingSpinner) {
-        loadingSpinner.remove();
-      }
-      
-      // Display events
-      events.forEach(event => {
-        const eventCard = createEventCard(event);
-        eventsGrid.appendChild(eventCard);
-      });
+    } catch (error) {
+      console.error('Error parsing user data:', error);
     }
-  }
-  
-  // Create sample events data
-  function createSampleEvents() {
-    console.log('Creating sample events data');
     
-    const sampleEvents = [
-      {
-        id: "event_1",
-        title: "Digital Art Workshop",
-        description: "Learn digital art techniques from professional artists.",
-        date: new Date(Date.now() + 7 * 24 * 60 * 60 * 1000).toISOString(),
-        endDate: new Date(Date.now() + 7 * 24 * 60 * 60 * 1000 + 3 * 60 * 60 * 1000).toISOString(),
-        location: "Virtual Event - Zoom",
-        category: "Workshop",
-        tags: ["Digital Art", "Learning", "Virtual"],
-        organizer: "Creative Arts Association",
-        imageUrl: "https://picsum.photos/600/400?random=4",
-        attendees: 15,
-        maxAttendees: 50,
-        isFeatured: true
-      },
-      {
-        id: "event_2",
-        title: "Youth Art Exhibition",
-        description: "Showcase featuring artwork from talented young creators.",
-        date: new Date(Date.now() + 14 * 24 * 60 * 60 * 1000).toISOString(),
-        endDate: new Date(Date.now() + 21 * 24 * 60 * 60 * 1000).toISOString(),
-        location: "Community Art Gallery, 123 Main St",
-        category: "Exhibition",
-        tags: ["Exhibition", "Art", "Youth"],
-        organizer: "Youth Art Foundation",
-        imageUrl: "https://picsum.photos/600/400?random=5",
-        attendees: 30,
-        maxAttendees: 100,
-        isFeatured: true
-      },
-      {
-        id: "event_3",
-        title: "Creative Writing Workshop",
-        description: "Develop your writing skills with professional guidance.",
-        date: new Date(Date.now() + 10 * 24 * 60 * 60 * 1000).toISOString(),
-        endDate: new Date(Date.now() + 10 * 24 * 60 * 60 * 1000 + 2 * 60 * 60 * 1000).toISOString(),
-        location: "Public Library, Conference Room B",
-        category: "Workshop",
-        tags: ["Writing", "Workshop", "Learning"],
-        organizer: "Writers Guild",
-        imageUrl: "https://picsum.photos/600/400?random=6",
-        attendees: 12,
-        maxAttendees: 20,
-        isFeatured: false
-      }
-    ];
+    // If no user is logged in, show sample user
+    if (!currentUser) {
+      currentUser = {
+        id: "sample_user",
+        name: "Sample User",
+        email: "sample@example.com",
+        avatar: "https://i.pravatar.cc/150?img=" + Math.floor(Math.random() * 10),
+        bio: "This is a sample user profile. Log in or sign up to create your own!",
+        createdAt: new Date().toISOString(),
+        role: "user",
+        skills: ["Visual Art", "Photography", "Design"]
+      };
+    }
     
-    localStorage.setItem('cys_events', JSON.stringify(sampleEvents));
-  }
-  
-  // Create event card element
-  function createEventCard(event) {
-    const eventCard = document.createElement('div');
-    eventCard.className = 'event-card';
-    
-    // Format date
-    const eventDate = new Date(event.date);
-    const formattedDate = eventDate.toLocaleDateString('en-US', {
-      month: 'long',
-      day: 'numeric',
-      year: 'numeric'
-    });
-    
-    const formattedTime = eventDate.toLocaleTimeString('en-US', {
-      hour: 'numeric',
-      minute: '2-digit',
-      hour12: true
-    });
-    
-    eventCard.innerHTML = `
-      <img src="${event.imageUrl || 'https://picsum.photos/600/400?random=' + Math.floor(Math.random() * 100)}" alt="${event.title}" class="event-image">
-      <div class="event-details">
-        <span class="event-date">${formattedDate}, ${formattedTime}</span>
-        <h3 class="event-title">${event.title}</h3>
-        <p class="event-location">${event.location}</p>
-        <p class="event-description">${event.description.substring(0, 120)}${event.description.length > 120 ? '...' : ''}</p>
-        <div class="event-footer">
-          <span class="event-category">${event.category}</span>
-          <span class="event-attendees">${event.attendees || 0} attending</span>
+    // Immediately display profile
+    profileContainer.innerHTML = `
+      <img src="${currentUser.avatar || 'https://i.pravatar.cc/150?img=1'}" alt="${currentUser.name}" class="profile-avatar">
+      <div class="profile-info">
+        <h1>${currentUser.name}</h1>
+        <p class="profile-role">Creator (${currentUser.skills ? currentUser.skills.join(', ') : 'No skills listed'})</p>
+        <p class="profile-bio">${currentUser.bio || 'No bio available'}</p>
+        <div class="profile-stats">
+          <div class="stat-item">
+            <div class="stat-value" id="portfolioCount">2</div>
+            <div class="stat-label">Works</div>
+          </div>
+          <div class="stat-item">
+            <div class="stat-value" id="likesCount">42</div>
+            <div class="stat-label">Likes</div>
+          </div>
+          <div class="stat-item">
+            <div class="stat-value" id="commentsCount">5</div>
+            <div class="stat-label">Comments</div>
+          </div>
         </div>
       </div>
     `;
     
-    return eventCard;
-  }
+    // Also fix the portfolio tab
+    const portfolioTab = document.getElementById('portfolioTab');
+    if (portfolioTab) {
+      // Remove loading spinner
+      const tabLoadingSpinner = portfolioTab.querySelector('.loading-spinner');
+      if (tabLoadingSpinner) {
+        tabLoadingSpinner.remove();
+      }
+      
+      // Create portfolio grid with sample items
+      const portfolioGrid = document.createElement('div');
+      portfolioGrid.className = 'portfolio-grid';
+      
+      // Add sample portfolio items
+      portfolioGrid.innerHTML = `
+        <div class="portfolio-item">
+          <div class="portfolio-content">
+            <img src="https://picsum.photos/600/400?random=1" alt="Sample Artwork" class="portfolio-image">
+            <div class="portfolio-info">
+              <h3 class="portfolio-title">Sample Artwork</h3>
+              <p class="portfolio-category">Visual Art</p>
+              <div class="portfolio-tags">
+                <span class="tag">Digital Art</span>
+                <span class="tag">Illustration</span>
+              </div>
+              <p class="portfolio-date">Posted on Jan 15, 2023</p>
+              <div class="portfolio-stats">
+                <span class="likes-count">24 likes</span>
+                <span class="comments-count">3 comments</span>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="portfolio-item">
+          <div class="portfolio-content">
+            <img src="https://picsum.photos/600/400?random=2" alt="Another Artwork" class="portfolio-image">
+            <div class="portfolio-info">
+              <h3 class="portfolio-title">Another Artwork</h3>
+              <p class="portfolio-category">Photography</p>
+              <div class="portfolio-tags">
+                <span class="tag">Portrait</span>
+                <span class="tag">Black & White</span>
+              </div>
+              <p class="portfolio-date">Posted on Feb 20, 2023</p>
+              <div class="portfolio-stats">
+                <span class="likes-count">18 likes</span>
+                <span class="comments-count">2 comments</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      `;
+      
+      // Add to portfolio tab
+      portfolioTab.appendChild(portfolioGrid);
+    }
+    
+    // Fix tabs functionality
+    const tabButtons = document.querySelectorAll('.tab-button');
+    const tabContents = document.querySelectorAll('.tab-content');
+    
+    tabButtons.forEach(button => {
+      button.addEventListener('click', () => {
+        // Remove active class from all buttons and contents
+        tabButtons.forEach(btn => btn.classList.remove('active'));
+        tabContents.forEach(content => content.classList.remove('active'));
+        
+        // Add active class to clicked button and corresponding content
+        button.classList.add('active');
+        const tabId = button.dataset.tab;
+        const tabContent = document.getElementById(tabId);
+        if (tabContent) {
+          tabContent.classList.add('active');
+        }
+      });
+    });
+  };
   
-  // Run fixes for all pages
-  fixHomePageButtons();
-  fixExplorePage();
-  fixEventsPage();
+  // Run the fix immediately and again after DOM is loaded
+  profileFix();
+  document.addEventListener('DOMContentLoaded', profileFix);
+}

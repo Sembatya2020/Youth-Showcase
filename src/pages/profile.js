@@ -76,7 +76,7 @@ export default function initializeProfilePage() {
     
     // Update profile content
     profileContainer.innerHTML = `
-      <img src="${user.avatar || '/public/images/default-avatar.jpg'}" alt="${user.name}" class="profile-avatar">
+      <img src="${user.avatar || '/public/images/default-avatar.png'}" alt="${user.name}" class="profile-avatar">
       <div class="profile-info">
         <h1>${user.name}</h1>
         <p class="profile-role">${roleOrExpertise}</p>
@@ -412,7 +412,7 @@ export default function initializeProfilePage() {
         <h2>Edit Profile</h2>
         <form id="editProfileForm">
           <div class="avatar-upload">
-            <img src="${user.avatar || '/public/images/default-avatar.jpg'}" alt="${user.name}" class="preview-avatar">
+            <img src="${user.avatar || '/public/images/default-avatar.png'}" alt="${user.name}" class="preview-avatar">
             <button type="button" class="secondary-btn">Change Avatar</button>
             <input type="file" id="avatarInput" accept="image/*" style="display: none;">
           </div>

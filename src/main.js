@@ -245,7 +245,7 @@ function updateUIForLoggedInUser(user) {
   authButtons.innerHTML = `
     <div class="user-menu">
       <div class="user-avatar">
-        <img src="${user.avatar || '/public/images/default-avatar.jpg'}" alt="${user.name}">
+        <img src="${user.avatar || '/public/images/default-avatar.png'}" alt="${user.name}">
       </div>
       <span class="user-name">${user.name}</span>
       <div class="dropdown-menu">
@@ -288,11 +288,8 @@ function updateUIForLoggedInUser(user) {
 
 
 
-// Add this line to your main.js document.addEventListener('DOMContentLoaded', ...) function
-// Make sure it's added right after you declare the DOM is loaded
-// document.addEventListener('DOMContentLoaded', () => {
-//   initializeHeader();s
-//   ...
-    initModals(); // Add this line to initialize modals
-//   ...
-// });
+document.addEventListener('DOMContentLoaded', () => {
+  // If you have this function defined elsewhere
+  initModals();       // This initializes your login/signup modals
+  // Any other initialization functions can go here...
+});
