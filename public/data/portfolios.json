@@ -1,0 +1,131 @@
+[
+    {
+      "id": "portfolio_1",
+      "userId": "user_1",
+      "creator": "Alex Johnson",
+      "title": "Neon Dreams",
+      "description": "A series exploring urban nightlife through vibrant digital illustrations.",
+      "category": "Visual Art",
+      "tags": ["Digital Art", "Illustration", "Urban"],
+      "imageUrl": "/public/images/portfolio1.jpg",
+      "createdAt": "2023-03-15T18:30:00Z",
+      "likes": 42,
+      "comments": [
+        {
+          "userId": "user_3",
+          "username": "Taylor Wong",
+          "content": "The colors in this series are incredible! Love how you captured the city lights.",
+          "createdAt": "2023-03-16T09:45:00Z"
+        },
+        {
+          "userId": "mentor_1",
+          "username": "Dr. Samira Khan",
+          "content": "Your composition skills are really developing. I particularly like the contrast in the third piece.",
+          "createdAt": "2023-03-17T14:20:00Z"
+        }
+      ]
+    },
+    {
+      "id": "portfolio_2",
+      "userId": "user_2",
+      "creator": "Jamie Rivera",
+      "title": "Urban Frequencies",
+      "description": "An EP blending electronic beats with urban soundscapes recorded around the city.",
+      "category": "Music",
+      "tags": ["Electronic", "Hip-Hop", "Ambient"],
+      "imageUrl": "/public/images/portfolio2.jpg",
+      "audioUrl": "/public/audio/urban-frequencies.mp3",
+      "createdAt": "2023-04-02T11:15:00Z",
+      "likes": 37,
+      "comments": [
+        {
+          "userId": "mentor_2",
+          "username": "Marcus Chen",
+          "content": "The way you've layered those city sounds into the beat is really innovative. Would love to hear more of this style.",
+          "createdAt": "2023-04-03T15:30:00Z"
+        }
+      ]
+    },
+    {
+      "id": "portfolio_3",
+      "userId": "user_3",
+      "creator": "Taylor Wong",
+      "title": "Concrete Gardens",
+      "description": "A collection of poems exploring the intersection of nature and urban environments.",
+      "category": "Writing",
+      "tags": ["Poetry", "Urban", "Nature"],
+      "imageUrl": "/public/images/portfolio3.jpg",
+      "content": "Sample poem content here...",
+      "createdAt": "2023-03-28T09:40:00Z",
+      "likes": 29,
+      "comments": [
+        {
+          "userId": "user_1",
+          "username": "Alex Johnson",
+          "content": "Your imagery is so vivid. I can actually visualize every scene you've described!",
+          "createdAt": "2023-03-28T14:25:00Z"
+        }
+      ]
+    },
+    {
+      "id": "portfolio_4",
+      "userId": "user_4",
+      "creator": "Jordan Smith",
+      "title": "Voices Unheard",
+      "description": "A short documentary highlighting youth involvement in community activism.",
+      "category": "Film",
+      "tags": ["Documentary", "Social Issues", "Youth"],
+      "imageUrl": "/public/images/portfolio4.jpg",
+      "videoUrl": "/public/videos/voices-unheard.mp4",
+      "createdAt": "2023-05-10T16:20:00Z",
+      "likes": 53,
+      "comments": [
+        {
+          "userId": "mentor_1",
+          "username": "Dr. Samira Khan",
+          "content": "This is powerful storytelling. Your cinematography really captures the emotion behind the movement.",
+          "createdAt": "2023-05-11T10:15:00Z"
+        },
+        {
+          "userId": "user_5",
+          "username": "Casey Martinez",
+          "content": "So inspiring to see other young people making a difference!",
+          "createdAt": "2023-05-11T18:45:00Z"
+        }
+      ]
+    },
+    {
+      "id": "portfolio_5",
+      "userId": "user_5",
+      "creator": "Casey Martinez",
+      "title": "Movement in the City",
+      "description": "A dance performance exploring the rhythm and flow of urban life.",
+      "category": "Performance",
+      "tags": ["Dance", "Contemporary", "Urban"],
+      "imageUrl": "/public/images/portfolio5.jpg",
+      "videoUrl": "/public/videos/movement-city.mp4",
+      "createdAt": "2023-04-18T13:10:00Z",
+      "likes": 45,
+      "comments": [
+        {
+          "userId": "user_2",
+          "username": "Jamie Rivera",
+          "content": "Your movements perfectly match the flow of the city. Would you be interested in collaborating on a music video?",
+          "createdAt": "2023-04-19T09:30:00Z"
+        }
+      ]
+    },
+    {
+      "id": "portfolio_6",
+      "userId": "user_1",
+      "creator": "Alex Johnson",
+      "title": "Character Studies",
+      "description": "A series of character designs inspired by urban folklore and mythology.",
+      "category": "Visual Art",
+      "tags": ["Character Design", "Digital Art", "Mythology"],
+      "imageUrl": "/public/images/portfolio6.jpg",
+      "createdAt": "2023-05-25T14:20:00Z",
+      "likes": 38,
+      "comments": []
+    }
+  ]

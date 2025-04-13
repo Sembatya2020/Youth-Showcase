@@ -1,0 +1,110 @@
+[
+    {
+      "id": "user_1",
+      "name": "Alex Johnson",
+      "email": "alex@example.com",
+      "password": "password123",
+      "avatar": "/public/images/avatar1.jpg",
+      "bio": "Visual artist specializing in digital illustrations and character design.",
+      "createdAt": "2023-01-15T08:30:00Z",
+      "role": "user",
+      "skills": ["Digital Art", "Illustration", "Character Design"],
+      "socialLinks": {
+        "instagram": "alex_draws",
+        "behance": "alexjohnson"
+      },
+      "testimonial": "Creative Youth Showcase has been instrumental in helping me connect with other artists and find mentors who have helped me improve my skills."
+    },
+    {
+      "id": "user_2",
+      "name": "Jamie Rivera",
+      "email": "jamie@example.com",
+      "password": "password123",
+      "avatar": "/public/images/avatar2.jpg",
+      "bio": "Music producer and songwriter passionate about hip-hop and electronic music.",
+      "createdAt": "2023-02-05T14:45:00Z",
+      "role": "user",
+      "skills": ["Music Production", "Songwriting", "Sound Design"],
+      "socialLinks": {
+        "soundcloud": "jamie_beats",
+        "instagram": "jamie_music"
+      },
+      "testimonial": "I've received amazing feedback on my tracks and connected with collaborators from around the world. This platform has been a game-changer for my music career."
+    },
+    {
+      "id": "user_3",
+      "name": "Taylor Wong",
+      "email": "taylor@example.com",
+      "password": "password123",
+      "avatar": "/public/images/avatar3.jpg",
+      "bio": "Writer and poet exploring themes of identity, nature, and urban life.",
+      "createdAt": "2023-02-18T11:20:00Z",
+      "role": "user",
+      "skills": ["Creative Writing", "Poetry", "Storytelling"],
+      "socialLinks": {
+        "twitter": "taylor_writes",
+        "medium": "taylorwong"
+      },
+      "testimonial": "The supportive community here has given me the confidence to share my writing more widely. The feedback I've received has been incredibly helpful."
+    },
+    {
+      "id": "user_4",
+      "name": "Jordan Smith",
+      "email": "jordan@example.com",
+      "password": "password123",
+      "avatar": "/public/images/avatar4.jpg",
+      "bio": "Filmmaker focusing on short documentaries that highlight social issues.",
+      "createdAt": "2023-03-09T09:15:00Z",
+      "role": "user",
+      "skills": ["Filmmaking", "Editing", "Cinematography"],
+      "socialLinks": {
+        "youtube": "jordanfilms",
+        "instagram": "jordan_creates"
+      }
+    },
+    {
+      "id": "user_5",
+      "name": "Casey Martinez",
+      "email": "casey@example.com",
+      "password": "password123",
+      "avatar": "/public/images/avatar5.jpg",
+      "bio": "Dancer specializing in contemporary and hip-hop styles.",
+      "createdAt": "2023-04-22T16:40:00Z",
+      "role": "user",
+      "skills": ["Contemporary Dance", "Hip-Hop Dance", "Choreography"],
+      "socialLinks": {
+        "instagram": "casey_moves",
+        "tiktok": "caseydance"
+      }
+    },
+    {
+      "id": "mentor_1",
+      "name": "Dr. Samira Khan",
+      "email": "samira@example.com",
+      "password": "password123",
+      "avatar": "/public/images/mentor1.jpg",
+      "bio": "Professional photographer and professor with 15 years of experience in documentary and portrait photography.",
+      "createdAt": "2023-01-05T10:00:00Z",
+      "role": "mentor",
+      "expertise": ["Photography", "Visual Storytelling", "Editing"],
+      "socialLinks": {
+        "instagram": "samira_captures",
+        "website": "samirakhan.com"
+      }
+    },
+    {
+      "id": "mentor_2",
+      "name": "Marcus Chen",
+      "email": "marcus@example.com",
+      "password": "password123",
+      "avatar": "/public/images/mentor2.jpg",
+      "bio": "Grammy-nominated music producer and sound engineer with expertise in multiple genres.",
+      "createdAt": "2023-01-12T13:30:00Z",
+      "role": "mentor",
+      "expertise": ["Music Production", "Sound Engineering", "Composition"],
+      "socialLinks": {
+        "instagram": "marcus_sounds",
+        "spotify": "marcuschen"
+      }
+    }
+  ]

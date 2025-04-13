@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Profile - Creative Youth Showcase</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/src/style.css">
+  <link rel="stylesheet" href="/src/styles/pages.css">
+  <link rel="stylesheet" href="/src/styles/components.css">
+  <link rel="stylesheet" href="/src/styles/responsive.css">
+</head>
+<body>
+  <header class="main-header">
+    <div class="container">
+      <div class="logo">
+        <a href="/">
+          <img src="../public/images/logo.png" alt="Creative Youth Showcase Logo" />
+          <span>Creative Youth Showcase</span>
+        </a>
+      </div>
+      <nav class="main-nav">
+        <ul>
+          <li><a href="/">Home</a></li>
+          <li><a href="/html/explore.html">Explore</a></li>
+          <li><a href="/html/events.html">Events</a></li>
+          <li><a href="/html/profile.html" class="resources-btn">Profile</a></li>
+        </ul>
+      </nav>
+      <div class="auth-buttons">
+        <button class="login-btn">Log In</button>
+        <button class="signup-btn">Sign Up</button>
+      </div>
+      <button class="mobile-menu-btn">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+  </header>
+
+  <main>
+    <section class="profile-header">
+      <div class="container">
+        <div class="profile-container">
+          <!-- Profile information will be loaded here -->
+          <div class="loading-spinner">
+            <div class="spinner"></div>
+            <p>Loading profile...</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="profile-content">
+      <div class="container">
+        <div class="profile-tabs">
+          <div class="tab-buttons">
+            <button class="tab-button active" data-tab="portfolioTab">Portfolio</button>
+            <button class="tab-button" data-tab="aboutTab">About</button>
+            <button class="tab-button" data-tab="activityTab">Activity</button>
+          </div>
+          
+          <div class="tab-content active" id="portfolioTab">
+            <!-- Portfolio items will be loaded here -->
+            <div class="loading-spinner">
+              <div class="spinner"></div>
+              <p>Loading portfolio...</p>
+            </div>
+          </div>
+          
+          <div class="tab-content" id="aboutTab">
+            <div class="about-content">
+              <h3>About</h3>
+              <p>This section will display more detailed information about the user, such as their background, interests, and goals.</p>
+              
+              <h3>Education & Experience</h3>
+              <div class="timeline">
+                <div class="timeline-item">
+                  <div class="timeline-date">2021 - Present</div>
+                  <div class="timeline-content">
+                    <h4>Art & Design School</h4>
+                    <p>Currently studying digital art and illustration.</p>
+                  </div>
+                </div>
+                <div class="timeline-item">
+                  <div class="timeline-date">2020 - 2021</div>
+                  <div class="timeline-content">
+                    <h4>Community Art Program</h4>
+                    <p>Participated in local youth art initiatives.</p>
+                  </div>
+                </div>
+              </div>
+              
+              <h3>Interests</h3>
+              <ul class="interests-list">
+                <li>Digital Illustration</li>
+                <li>Character Design</li>
+                <li>Animation</li>
+                <li>Graphic Novels</li>
+              </ul>
+            </div>
+          </div>
+          
+          <div class="tab-content" id="activityTab">
+            <div class="activity-content">
+              <h3>Recent Activity</h3>
+              <div class="activity-list">
+                <!-- Activity items will be loaded here -->
+                <div class="activity-item">
+                  <div class="activity-icon like-icon"></div>
+                  <div class="activity-details">
+                    <p><strong>Liked</strong> "Urban Frequencies" by Jamie Rivera</p>
+                    <span class="activity-date">2 days ago</span>
+                  </div>
+                </div>
+                <div class="activity-item">
+                  <div class="activity-icon comment-icon"></div>
+                  <div class="activity-details">
+                    <p><strong>Commented</strong> on "Voices Unheard" by Jordan Smith</p>
+                    <span class="activity-date">5 days ago</span>
+                  </div>
+                </div>
+                <div class="activity-item">
+                  <div class="activity-icon upload-icon"></div>
+                  <div class="activity-details">
+                    <p><strong>Uploaded</strong> "Neon Dreams" to their portfolio</p>
+                    <span class="activity-date">1 week ago</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-col">
+          <h3>Creative Youth Showcase</h3>
+          <p>Empowering young creators through community and exposure.</p>
+          <div class="social-links">
+            <!-- Social media links -->
+          </div>
+        </div>
+        <div class="footer-col">
+          <h4>Navigation</h4>
+          <ul>
+            <li><a href="/">Home</a></li>
+            <li><a href="/html/explore.html">Explore</a></li>
+            <li><a href="/html/events.html">Events</a></li>
+            <li><a href="#">Resources</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Legal</h4>
+          <ul>
+            <li><a href="#">Terms of Service</a></li>
+            <li><a href="#">Privacy Policy</a></li>
+            <li><a href="#">Community Guidelines</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Contact</h4>
+          <p>Have questions? <a href="mailto:info@creativeyouthshowcase.com">Contact us</a></p>
+        </div>
+      </div>
+      <div class="copyright">
+        <p>&copy; 2025 Creative Youth Showcase. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Auth modals -->
+  <div class="login-modal modal" id="loginModal">
+    <!-- Login form will be dynamically added here -->
+  </div>
+  <div class="signup-modal modal" id="signupModal">
+    <!-- Signup form will be dynamically added here -->
+  </div>
+
+  <Script src="./src/profile-fix.js"></Script>
+  <script src="/src/button-fix.js"></script>
+<script src="/src/json-fix.js"></script>
+  <script src="/src/data-fix.js"></script>
+  <script src="/src/auth-storage-fix.js"></script>
+  <script type="module" src="/src/main.js"></script>
+</body>
+</html>

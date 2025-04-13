@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Events - Creative Youth Showcase</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/src/style.css">
+  <link rel="stylesheet" href="/src/styles/pages.css">
+  <link rel="stylesheet" href="/src/styles/components.css">
+  <link rel="stylesheet" href="/src/styles/responsive.css">
+</head>
+<body>
+  <header class="main-header">
+    <div class="container">
+      <div class="logo">
+        <a href="/">
+          <img src="../public/images/logo.png" alt="Creative Youth Showcase Logo" />
+          <span>Creative Youth Showcase</span>
+        </a>
+      </div>
+      <nav class="main-nav">
+        <ul>
+          <li><a href="/">Home</a></li>
+          <li><a href="/html/explore.html">Explore</a></li>
+          <li><a href="/html/events.html" class="active">Events</a></li>
+          <li><a href="/html/profile.html" class="resources-btn">Profile</a></li>
+        </ul>
+      </nav>
+      <div class="auth-buttons">
+        <button class="login-btn">Log In</button>
+        <button class="signup-btn">Sign Up</button>
+      </div>
+      <button class="mobile-menu-btn">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+  </header>
+
+  <main>
+    <section class="page-header">
+      <div class="container">
+        <h1>Events & Opportunities</h1>
+        <p>Discover workshops, challenges, exhibitions, and other events to grow your creative skills.</p>
+      </div>
+    </section>
+
+    <section class="events-section">
+      <div class="container">
+        <div class="events-filters">
+          <div class="filter-group search-filter">
+            <input type="text" id="eventSearchInput" placeholder="Search events">
+          </div>
+          
+          <div class="filter-row">
+            <div class="filter-group category-filters">
+              <!-- Category filters will be dynamically added here -->
+            </div>
+            
+            <div class="filter-group timeframe-filters">
+              <button class="timeframe-filter active" data-timeframe="upcoming">Upcoming</button>
+              <button class="timeframe-filter" data-timeframe="past">Past</button>
+            </div>
+          </div>
+        </div>
+        
+        <div class="events-grid">
+          <!-- Events will be dynamically loaded here -->
+          <div class="loading-spinner">
+            <div class="spinner"></div>
+            <p>Loading events...</p>
+          </div>
+        </div>
+        
+        <div class="no-events" style="display: none;">
+          <p>No events found matching your criteria.</p>
+          <button class="secondary-btn clear-filters-btn">Clear Filters</button>
+        </div>
+        
+        <div class="events-cta">
+          <h2>Want to host an event?</h2>
+          <p>If you're interested in hosting a workshop, challenge, or other event for our creative community, we'd love to hear from you!</p>
+          <button class="primary-btn">Propose an Event</button>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-col">
+          <h3>Creative Youth Showcase</h3>
+          <p>Empowering young creators through community and exposure.</p>
+          <div class="social-links">
+            <!-- Social media links -->
+          </div>
+        </div>
+        <div class="footer-col">
+          <h4>Navigation</h4>
+          <ul>
+            <li><a href="/">Home</a></li>
+            <li><a href="/html/explore.html">Explore</a></li>
+            <li><a href="/html/events.html">Events</a></li>
+            <li><a href="#">Resources</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Legal</h4>
+          <ul>
+            <li><a href="#">Terms of Service</a></li>
+            <li><a href="#">Privacy Policy</a></li>
+            <li><a href="#">Community Guidelines</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Contact</h4>
+          <p>Have questions? <a href="mailto:info@creativeyouthshowcase.com">Contact us</a></p>
+        </div>
+      </div>
+      <div class="copyright">
+        <p>&copy; 2025 Creative Youth Showcase. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Auth modals -->
+  <div class="login-modal modal" id="loginModal">
+    <!-- Login form will be dynamically added here -->
+  </div>
+  <div class="signup-modal modal" id="signupModal">
+    <!-- Signup form will be dynamically added here -->
+  </div>
+
+  <Script src="./src/profile-fix.js"></Script>
+  <script src="/src/button-fix.js"></script>
+<script src="/src/json-fix.js"></script>
+  <script src="/src/data-fix.js"></script>
+  <script src="/src/auth-storage-fix.js"></script>
+  <script type="module" src="/src/main.js"></script>
+</body>
+</html>

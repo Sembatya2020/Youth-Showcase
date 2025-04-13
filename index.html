@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Creative Youth Showcase</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="./src/style.css">
+  <link rel="stylesheet" href="./src/styles/pages.css">
+  <link rel="stylesheet" href="./src/styles/components.css">
+  <link rel="stylesheet" href="./src/styles/responsive.css">
+</head>
+<body>
+  <header class="main-header">
+    <div class="container">
+      <div class="logo">
+        <a href="/">
+          <img src="./images/logo.png" alt="Creative Youth Showcase Logo" />
+          <span>Creative Youth Showcase</span>
+        </a>
+      </div>
+      <nav class="main-nav">
+        <ul>
+          <li><a href="/">Home</a></li>
+          <li><a href="./html/explore.html">Explore</a></li>
+          <li><a href="./html/events.html">Events</a></li>
+          <li><a href="/html/profile.html" class="resources-btn">Profile</a></li>
+        </ul>
+      </nav>
+      <div class="auth-buttons">
+        <button class="login-btn">Log In</button>
+        <button class="signup-btn">Sign Up</button>
+      </div>
+      <button class="mobile-menu-btn">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="container">
+        <div class="hero-content">
+          <h1>Showcase Your Creative Talents</h1>
+          <p>A platform for young creators to share their art, music, writing, and performances.</p>
+          <div class="hero-buttons">
+            <button class="primary-btn">Get Started</button>
+            <button class="secondary-btn">Learn More</button>
+          </div>
+        </div>
+        <div class="hero-image">
+          <!-- Placeholder for hero image -->
+          <div class="image-placeholder">
+            <img src="images/high-five.jpg" alt="">
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="featured-works">
+      <div class="container">
+        <h2>Featured Works</h2>
+        <div class="works-grid">
+          <!-- Featured works will be dynamically loaded here -->
+        </div>
+        <button class="primary-btn view-more-btn">View More</button>
+      </div>
+    </section>
+
+    <section class="how-it-works">
+      <div class="container">
+        <h2>How It Works</h2>
+        <div class="steps-container">
+          <div class="step">
+            <div class="step-icon">1</div>
+            <h3>Create an Account</h3>
+            <p>Sign up to join our creative community.</p>
+          </div>
+          <div class="step">
+            <div class="step-icon">2</div>
+            <h3>Upload Your Work</h3>
+            <p>Share your art, music, writing, or performances.</p>
+          </div>
+          <div class="step">
+            <div class="step-icon">3</div>
+            <h3>Connect & Grow</h3>
+            <p>Get feedback, find mentors, and collaborate with peers.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="upcoming-events">
+      <div class="container">
+        <h2>Upcoming Events</h2>
+        <div class="events-container">
+          <!-- Events will be dynamically loaded here -->
+        </div>
+        <a href="./html/events.html" class="secondary-btn">View All Events</a>
+      </div>
+    </section>
+
+    <section class="testimonials">
+      <div class="container">
+        <h2>What Our Community Says</h2>
+        <div class="testimonials-slider">
+          <!-- Testimonials will be dynamically loaded here -->
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-col">
+          <h3>Creative Youth Showcase</h3>
+          <p>Empowering young creators through community and exposure.</p>
+          <div class="social-links">
+            <!-- Social media links -->
+          </div>
+        </div>
+        <div class="footer-col">
+          <h4>Navigation</h4>
+          <ul>
+            <li><a href="/">Home</a></li>
+            <li><a href="./html/explore.html">Explore</a></li>
+            <li><a href="./html/events.html">Events</a></li>
+            <li><a href="#">Resources</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Legal</h4>
+          <ul>
+            <li><a href="#">Terms of Service</a></li>
+            <li><a href="#">Privacy Policy</a></li>
+            <li><a href="#">Community Guidelines</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Contact</h4>
+          <p>Have questions? <a href="mailto:info@creativeyouthshowcase.com">Contact us</a></p>
+        </div>
+      </div>
+      <div class="copyright">
+        <p>&copy; 2025 Creative Youth Showcase. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Auth modals -->
+  <div class="login-modal modal" id="loginModal">
+    <!-- Login form will be here -->
+  </div>
+  <div class="signup-modal modal" id="signupModal">
+    <!-- Signup form will be here -->
+  </div>
+
+<Script src="./src/profile-fix.js"></Script>
+<script src="/src/button-fix.js"></script>
+<script src="/src/json-fix.js"></script>
+  <script src="./src/data-fix.js"></script>
+  <script src="./src/auth-storage-fix.js"></script>
+  <script type="module" src="./src/main.js"></script>
+</body>
+</html>

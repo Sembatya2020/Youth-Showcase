@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Upload Your Work - Creative Youth Showcase</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/src/style.css">
+  <link rel="stylesheet" href="/src/styles/pages.css">
+  <link rel="stylesheet" href="/src/styles/components.css">
+  <link rel="stylesheet" href="/src/styles/responsive.css">
+</head>
+<body>
+  <header class="main-header">
+    <div class="container">
+      <div class="logo">
+        <a href="/">
+          <img src="/images/logo.png" alt="Creative Youth Showcase Logo" />
+          <span>Creative Youth Showcase</span>
+        </a>
+      </div>
+      <nav class="main-nav">
+        <ul>
+          <li><a href="/">Home</a></li>
+          <li><a href="/html/explore.html">Explore</a></li>
+          <li><a href="/html/events.html">Events</a></li>
+          <li><a href="/html/profile.html" class="resources-btn">Profile</a></li>
+        </ul>
+      </nav>
+      <div class="auth-buttons">
+        <button class="login-btn">Log In</button>
+        <button class="signup-btn">Sign Up</button>
+      </div>
+      <button class="mobile-menu-btn">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+  </header>
+
+  <main>
+    <section class="page-header">
+      <div class="container">
+        <h1>Upload Your Work</h1>
+        <p>Share your creative work with the community and get feedback from peers and mentors.</p>
+      </div>
+    </section>
+
+    <section class="upload-section">
+      <div class="container">
+        <div class="upload-container">
+          <form id="uploadForm">
+            <div class="form-group">
+              <label for="workTitle">Title</label>
+              <input type="text" id="workTitle" placeholder="Give your work a title" required>
+            </div>
+            
+            <div class="form-group">
+              <label for="workDescription">Description</label>
+              <textarea id="workDescription" placeholder="Describe your work, inspiration, or process" rows="4" required></textarea>
+            </div>
+            
+            <div class="form-row">
+              <div class="form-group">
+                <label for="workCategory">Category</label>
+                <select id="workCategory" required>
+                  <option value="select" disabled selected>Select a category</option>
+                  <option value="Visual Art">Visual Art</option>
+                  <option value="Music">Music</option>
+                  <option value="Writing">Writing</option>
+                  <option value="Film">Film</option>
+                  <option value="Performance">Performance</option>
+                  <option value="Photography">Photography</option>
+                  <option value="Design">Design</option>
+                  <option value="Other">Other</option>
+                </select>
+              </div>
+              
+              <div class="form-group">
+                <label>Tags</label>
+                <div class="tag-input-container" id="tagContainer">
+                  <input type="text" id="tagInput" placeholder="Add tags" class="tag-input">
+                </div>
+                <small>Press Enter to add a tag</small>
+              </div>
+            </div>
+            
+            <div class="form-group">
+              <label>Upload File</label>
+              <div class="upload-preview" id="previewContainer">
+                <div class="upload-placeholder" id="previewPlaceholder">
+                  <i class="upload-icon"></i>
+                  <p>Click to browse or drag and drop</p>
+                  <span>Supported formats: JPG, PNG, GIF, MP3, MP4, PDF</span>
+                </div>
+                <input type="file" id="fileInput" class="upload-input">
+              </div>
+            </div>
+            
+            <div class="form-actions">
+              <button type="button" id="cancelBtn" class="secondary-btn">Cancel</button>
+              <button type="submit" id="submitBtn" class="primary-btn">Publish Work</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-col">
+          <h3>Creative Youth Showcase</h3>
+          <p>Empowering young creators through community and exposure.</p>
+          <div class="social-links">
+            <!-- Social media links -->
+          </div>
+        </div>
+        <div class="footer-col">
+          <h4>Navigation</h4>
+          <ul>
+            <li><a href="/">Home</a></li>
+            <li><a href="/html/explore.html">Explore</a></li>
+            <li><a href="/html/events.html">Events</a></li>
+            <li><a href="#">Resources</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Legal</h4>
+          <ul>
+            <li><a href="#">Terms of Service</a></li>
+            <li><a href="#">Privacy Policy</a></li>
+            <li><a href="#">Community Guidelines</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Contact</h4>
+          <p>Have questions? <a href="mailto:info@creativeyouthshowcase.com">Contact us</a></p>
+        </div>
+      </div>
+      <div class="copyright">
+        <p>&copy; 2025 Creative Youth Showcase. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Auth modals -->
+  <div class="login-modal modal" id="loginModal">
+    <!-- Login form will be dynamically added here -->
+  </div>
+  <div class="signup-modal modal" id="signupModal">
+    <!-- Signup form will be dynamically added here -->
+  </div>
+
+  <Script src="./src/profile-fix.js"></Script>
+  <script src="/src/button-fix.js"></script>
+<script src="/src/json-fix.js"></script>
+  <script src="/src/data-fix.js"></script>
+  <script src="/src/auth-storage-fix.js"></script>
+  <script type="module" src="/src/main.js"></script>
+</body>
+</html>
