@@ -390,7 +390,7 @@ export default function initializeEventsPage() {
         <span class="event-date">${formattedDate}, ${formattedTime}</span>
         <h3 class="event-title">${event.title}</h3>
         <p class="event-location">${event.location}</p>
-        <p class="event-description">${event.description.substring(0, 120)}${event.description.length > 120 ? '...' : ''}</p>
+        <p class="event-description">${event.description.substring(0, 40)}${event.description.length > 40 ? '...' : ''}</p>
         <div class="event-footer">
           <span class="event-category">${event.category}</span>
           <span class="event-attendees">${event.attendees || 0} attending</span>
