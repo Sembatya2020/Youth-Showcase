@@ -1,0 +1,8 @@
+[build]
+  publish = "dist"  # Replace with your build output directory
+  command = "npm run build"  # Replace with your build command
+
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200
