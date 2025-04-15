@@ -1,5 +1,3 @@
-// Add this to your main.js file, near the top where you have your DOMContentLoaded event listener:
-
 // Function to initialize modals
 function initModals() {
   const modals = document.querySelectorAll('.modal');

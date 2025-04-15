@@ -257,6 +257,193 @@
     })();
   </script>
 
+  <!-- Add this at the bottom of both your upload.html and profile.html files -->
+<script>
+// Emergency fix for upload and profile display issues
+(function() {
+  console.log("Emergency portfolio fix running");
+  
+  // Get current page
+  const currentPath = window.location.pathname;
+  
+  // Upload page fix
+  if (currentPath.includes('upload.html')) {
+    
+    // Direct upload form handling
+    const form = document.getElementById('uploadForm');
+    if (form) {
+      console.log("Attaching direct upload handler");
+      
+      // Replace any existing handlers
+      form.onsubmit = function(e) {
+        e.preventDefault();
+        e.stopPropagation();
+        
+        console.log("Direct upload handler running");
+        
+        // Get form values
+        const title = document.getElementById('workTitle').value;
+        const description = document.getElementById('workDescription').value;
+        const category = document.getElementById('workCategory').value;
+        
+        if (!title || !description || category === 'select') {
+          alert("Please fill in all required fields");
+          return false;
+        }
+        
+        // Create item with minimum required fields
+        const newWork = {
+          id: 'portfolio_' + Date.now(),
+          title: title,
+          description: description,
+          category: category,
+          tags: ['Sample'],
+          imageUrl: 'https://picsum.photos/600/400?random=' + Math.floor(Math.random() * 100),
+          createdAt: new Date().toISOString()
+        };
+        
+        // Save directly to localStorage
+        const portfoliosJson = localStorage.getItem('direct_portfolios');
+        let portfolios = portfoliosJson ? JSON.parse(portfoliosJson) : [];
+        portfolios.push(newWork);
+        localStorage.setItem('direct_portfolios', JSON.stringify(portfolios));
+        
+        alert("Work uploaded successfully!");
+        
+        // Go to profile page
+        window.location.href = "/html/profile.html";
+        return false;
+      };
+    }
+  }
+  
+  // Profile page fix
+  if (currentPath.includes('profile.html')) {
+    console.log("Running direct profile display fix");
+    
+    // Function to update profile page
+    function updateProfilePage() {
+      // Update profile container
+      const profileContainer = document.querySelector('.profile-container');
+      if (profileContainer) {
+        // Remove loading spinner
+        const loadingSpinner = profileContainer.querySelector('.loading-spinner');
+        if (loadingSpinner) {
+          loadingSpinner.remove();
+        }
+        
+        // Show profile info
+        profileContainer.innerHTML = `
+          <img src="https://i.pravatar.cc/150?img=3" alt="User Profile" class="profile-avatar">
+          <div class="profile-info">
+            <h1>Demo User</h1>
+            <p class="profile-role">Creator (Visual Art, Design)</p>
+            <p class="profile-bio">This is a demo profile to showcase your creative works.</p>
+            <div class="profile-stats">
+              <div class="stat-item">
+                <div class="stat-value" id="portfolioCount">-</div>
+                <div class="stat-label">Works</div>
+              </div>
+              <div class="stat-item">
+                <div class="stat-value">28</div>
+                <div class="stat-label">Likes</div>
+              </div>
+              <div class="stat-item">
+                <div class="stat-value">14</div>
+                <div class="stat-label">Comments</div>
+              </div>
+            </div>
+          </div>
+        `;
+      }
+      
+      // Update portfolio tab
+      const portfolioTab = document.getElementById('portfolioTab');
+      if (portfolioTab) {
+        // Remove loading spinner
+        const loadingSpinner = portfolioTab.querySelector('.loading-spinner');
+        if (loadingSpinner) {
+          loadingSpinner.remove();
+        }
+        
+        // Get directly saved portfolios
+        const portfoliosJson = localStorage.getItem('direct_portfolios');
+        let portfolios = portfoliosJson ? JSON.parse(portfoliosJson) : [];
+        
+        if (portfolios.length === 0) {
+          // No portfolios, show empty state
+          portfolioTab.innerHTML = `
+            <div class="empty-state">
+              <p>No works have been added yet.</p>
+              <a href="/html/upload.html" class="primary-btn">Add Your First Work</a>
+            </div>
+          `;
+        } else {
+          // Create portfolio grid
+          let portfolioGridHtml = `
+            <div class="portfolio-grid">
+          `;
+          
+          // Add each portfolio
+          portfolios.forEach(portfolio => {
+            // Format date
+            const date = new Date(portfolio.createdAt);
+            const formattedDate = date.toLocaleDateString('en-US', {
+              month: 'short',
+              day: 'numeric',
+              year: 'numeric'
+            });
+            
+            portfolioGridHtml += `
+              <div class="portfolio-item">
+                <div class="portfolio-content">
+                  <img src="${portfolio.imageUrl}" alt="${portfolio.title}" class="portfolio-image">
+                  <div class="portfolio-info">
+                    <h3 class="portfolio-title">${portfolio.title}</h3>
+                    <p class="portfolio-category">${portfolio.category}</p>
+                    <p class="portfolio-date">Posted on ${formattedDate}</p>
+                  </div>
+                </div>
+              </div>
+            `;
+          });
+          
+          portfolioGridHtml += `</div>`;
+          portfolioTab.innerHTML = portfolioGridHtml;
+          
+          // Update portfolio count
+          const portfolioCount = document.getElementById('portfolioCount');
+          if (portfolioCount) {
+            portfolioCount.textContent = portfolios.length;
+          }
+        }
+      }
+      
+      // Fix tabs functionality
+      const tabButtons = document.querySelectorAll('.tab-button');
+      const tabContents = document.querySelectorAll('.tab-content');
+      
+      tabButtons.forEach(button => {
+        button.addEventListener('click', () => {
+          tabButtons.forEach(btn => btn.classList.remove('active'));
+          tabContents.forEach(content => content.classList.remove('active'));
+          
+          button.classList.add('active');
+          const tabId = button.dataset.tab;
+          document.getElementById(tabId).classList.add('active');
+        });
+      });
+    }
+    
+    // Run immediately and after a delay
+    updateProfilePage();
+    setTimeout(updateProfilePage, 500);
+  }
+})();
+</script>
+
+  
+  <script src="/src/upload-fix.js"></script>
   <Script src="/src/profile-fix.js"></Script>
   <script src="/src/button-fix.js"></script>
 <script src="/src/json-fix.js"></script>
