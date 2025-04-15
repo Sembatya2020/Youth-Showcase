@@ -243,7 +243,7 @@ function updateUIForLoggedInUser(user) {
   authButtons.innerHTML = `
     <div class="user-menu">
       <div class="user-avatar">
-        <img src="${user.avatar || '/public/images/default-avatar.png'}" alt="${user.name}">
+        <img src="${user.avatar || '/images/default-avatar.png'}" alt="${user.name}">
       </div>
       <span class="user-name">${user.name}</span>
       <div class="dropdown-menu">

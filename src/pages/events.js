@@ -385,7 +385,7 @@ export default function initializeEventsPage() {
     
     // Build card HTML
     eventCard.innerHTML = `
-      <img src="${event.imageUrl || '/public/images/event-placeholder.jpg'}" alt="${event.title}" class="event-image">
+      <img src="${event.imageUrl || '/images/event-placeholder.jpg'}" alt="${event.title}" class="event-image">
       <div class="event-details">
         <span class="event-date">${formattedDate}, ${formattedTime}</span>
         <h3 class="event-title">${event.title}</h3>
