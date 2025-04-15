@@ -52,7 +52,7 @@ export async function postData(endpoint, data) {
         existingData = initialData || [];
       }
     } catch (error) {
-      console.warn('Could not load existing data, starting fresh');
+      console.warn('Could not load existing data, starting afresh');
     }
     
     // Add new data with ID and timestamp
