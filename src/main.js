@@ -5,6 +5,8 @@ function initModals() {
   const signupBtn = document.querySelector('.signup-btn');
   
   // Add event listeners for opening modals
+
+  
   if (loginBtn) {
     loginBtn.addEventListener('click', () => {
       openModal('loginModal');
