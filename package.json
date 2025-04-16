@@ -11,5 +11,8 @@
   },
   "devDependencies": {
     "vite": "^6.2.0"
+  },
+  "dependencies": {
+    "lint": "^0.8.19"
   }
 }

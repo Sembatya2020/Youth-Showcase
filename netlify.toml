@@ -1,3 +1,10 @@
 [build]
   publish = "dist"  # Replace with your build output directory
   command = "npm run build"  # Replace with your build command
+
+[[headers]]
+  for = "/*"
+  [headers.values]
+    Access-Control-Allow-Origin = "*"
+    Access-Control-Allow-Methods = "GET, POST, PUT, DELETE"
+    Access-Control-Allow-Headers = "Content-Type, Authorization"
